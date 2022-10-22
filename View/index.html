@@ -1,19 +1,59 @@
+<!-- https://www.pokexperto.net/index2.php?seccion=nds/nationaldex/stats&pk=1 
+  
+https://pokeapi.co
+
+https://www.manualweb.net/html5/formularios-barras-progreso/-->
+
 <!DOCTYPE html>
 <html lang="es">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>WIKIPOKE</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div>
-    <img src="" alt="">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WIKIPOKE</title>
+    <link rel="stylesheet" href="../Css/style.css" />
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li></li>
+      </ul>
+    </nav>
+    <div class="container">
+      <div class="card">
+        <div class="img_card">
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+            alt=""
+          />
+        </div>
+        <div class="info_card">
+          <div class="name_card">
+            <h2>Bulbasaur</h2>
+          </div>
+          <progress max="255" value="45"></progress>
+        </div>
+      </div>
+      <div class="card">
+        <div class="img_card">
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/2.png"
+            alt=""
+          />
+        </div>
+        <div class="info_card"></div>
+      </div>
+      <div class="card">
+        <div class="img_card">
+          <img
+            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/3.png"
+            alt=""
+          />
+        </div>
+        <div class="info_card"></div>
+      </div>
+    </div>
 
-  </div>
-  
-
-  <script src="./api_pokemon.js" type="module"></script>
-</body>
+    <script src="../Js/api_pokemon.js" type="module"></script>
+  </body>
 </html>

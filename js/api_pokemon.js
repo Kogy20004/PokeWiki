@@ -10,7 +10,7 @@ const fetchData = async () => {
     const res = await fetch(`https://pokeapi.co/api/v2/pokemon/1/`)
     const data = await res.json()
     const pokemon = {
-      img: data.sprites.other.dream_world.front_default,
+      img: data.sprites.other.officialartwork.front_default,
       nombre: data.name,
     }
     console.log(data)
