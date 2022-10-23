@@ -26,6 +26,7 @@ body {
   gap: 15px;
   padding: 7.5px 15px;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .card {
@@ -70,6 +71,7 @@ body {
   margin-top: -5px;
   border-bottom: 4px dotted white;
   height: fit-content;
+  text-align: center;
 }
 
 /* datos del peso y altura */

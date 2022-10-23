@@ -1,21 +1,15 @@
-// const progress_PS = document.getElementById("Ps").querySelector(".value")
-// console.log(progress_PS)
-// progress_PS.style.width="50%"
-
 const container_card = document.getElementById("container_card");
-
 function types(cuantos, type, id) {
-  const lugar = "pok_"+id
+  const lugar = "pok_" + id;
   const imgs = document.querySelector(`#${lugar} .types`);
-  console.log(imgs);
-  const imgs_type_1 = `<img src="../Img/Tipo_${type[0].type.name}.png" alt="" id="type_1" />`
+
+  const imgs_type_1 = `<img src="../Img/Tipo_${type[0].type.name}.png" alt="" id="type_1" />`;
   if (cuantos == 1) {
-    imgs.insertAdjacentHTML("beforeend", imgs_type_1  );
+    imgs.insertAdjacentHTML("beforeend", imgs_type_1);
   } else {
     const imgs_type_2 = `<img src="../Img/Tipo_${type[1].type.name}a.png" alt="" id="type_2" />`;
-    imgs.insertAdjacentHTML("beforeend", imgs_type_1 );
-    imgs.insertAdjacentHTML("beforeend", imgs_type_2 );
-    
+    imgs.insertAdjacentHTML("beforeend", imgs_type_1);
+    imgs.insertAdjacentHTML("beforeend", imgs_type_2);
   }
 }
 
@@ -100,18 +94,19 @@ function fetchPokemon(id) {
         </div>
         </div>
         </div>`;
-
       pokemon.types.length;
-
-      container_card.insertAdjacentHTML("beforeend", card);
-      types(cuantos, pokemon.types, pokemon.id)
+      setInterval(container_card.insertAdjacentHTML("beforeend", card),999999);
+      types(cuantos, pokemon.types, pokemon.id);
+      console.log(pokemon.name);
     });
 }
 
 function fetchPokemons(id_I, id_F) {
   for (let I = id_I; I <= id_F; I++) {
-    fetchPokemon(I);
+    fetchPokemon(I)
   }
 }
-
 fetchPokemons(1, 5);
+
+
+// 898 pokemones maximos

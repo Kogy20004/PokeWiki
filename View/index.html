@@ -19,80 +19,16 @@ https://www.manualweb.net/html5/formularios-barras-progreso/-->
     />
     <link rel="stylesheet" href="../Css/style.css" />
     <link rel="stylesheet" href="../Css/stats.css" />
+    <link rel="stylesheet" href="../Css/nav.css" />
   </head>
   <body>
     <nav>
-      <ul>
+      <div class="logo"></div>
+      <ul class="items_menu">
         <li></li>
       </ul>
     </nav>
-    <div class="container_card" id="container_card">
-      <div class="card" id="card">
-        <div class="info_card">
-          <div class="img_card">
-            <img
-              id="img_pokemon"
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-              alt=""
-            />
-          </div>
-          <div class="details_card">
-            <div class="id_pokedex">
-              <span>#001</span>
-            </div>
-            <div class="name_card">
-              <h2>Bulbasaur</h2>
-            </div>
-            <div class="Basic_data">
-              <p>Altura<span>0.7m</span></p>
-              <p>Peso<span>6.9kg</span></p>
-            </div>
-            <div class="stats">
-              <div class="stats_containesr" id="Ps">
-                <span>Ps</span>
-                <div class="progress">
-                  <div class="value">45</div>
-                </div>
-              </div>
-              <div class="stats_containesr" id="Att">
-                <span>Att</span>
-                <div class="progress">
-                  <div class="value">45</div>
-                </div>
-              </div>
-              <div class="stats_containesr" id="Def">
-                <span>Def</span>
-                <div class="progress">
-                  <div class="value">45</div>
-                </div>
-              </div>
-              <div class="stats_containesr" id="Vel">
-                <span>Vel</span>
-                <div class="progress">
-                  <div class="value">45</div>
-                </div>
-              </div>
-              <div class="stats_containesr" id="Att_S">
-                <span>At.S</span>
-                <div class="progress">
-                  <div class="value">45</div>
-                </div>
-              </div>
-              <div class="stats_containesr" id="Def_S">
-                <span>De.S</span>
-                <div class="progress">
-                  <div class="value">45</div>
-                </div>
-              </div>
-            </div>
-            <div class="types">
-              <img src="../Img/Tipo_acero.png" alt="" id="type_1" />
-              <img src="../Img/Tipo_planta.png" alt="" id="type_2" />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <script src="../Js/api_pokemon.js" type="module"></script>
+    <div class="container_card" id="container_card"></div>
+    <script src="../Js/app.js" type="module"></script>
   </body>
 </html>
