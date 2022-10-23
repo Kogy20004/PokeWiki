@@ -16,16 +16,16 @@
   --white: rgba(255, 255, 255);
 }
 body {
-  font-family: 'Comfortaa', cursive;
-  padding: 15px;
+  font-family: "Comfortaa", cursive;
   background-color: var(--yellow_p);
   color: white;
 }
 
-.container {
+.container_card {
   display: flex;
   gap: 15px;
-  /* flex-wrap: wrap; */
+  padding: 7.5px 15px;
+  flex-wrap: wrap;
 }
 
 .card {
@@ -36,7 +36,13 @@ body {
   padding: 65px 0;
   z-index: 0;
 }
-
+.info_card {
+  z-index: -1;
+  background-color: var(--blue_P);
+  height: 335px;
+  border-radius: 25% 25% 25px 25px;
+}
+/* imagen del pokemon */
 .img_card {
   position: relative;
   top: -60px;
@@ -50,13 +56,7 @@ body {
   border-radius: 45%;
   width: 60%;
 }
-
-.info_card {
-  z-index: -1;
-  background-color: var(--blue_P);
-  height: 335px;
-  border-radius: 25% 25% 25px 25px;
-}
+/* todos los datos  */
 .details_card {
   position: relative;
   top: -60px;
@@ -65,12 +65,14 @@ body {
   align-items: center;
   gap: 3px;
 }
+/* nombre del pokemon  */
 .name_card {
   margin-top: -5px;
   border-bottom: 4px dotted white;
   height: fit-content;
 }
 
+/* datos del peso y altura */
 .Basic_data {
   width: 100%;
   display: flex;
@@ -83,4 +85,14 @@ body {
   width: 55px;
   flex-direction: column;
   align-items: center;
+}
+
+/* los tipos del pokemon */
+.types {
+  margin-top: 5px;
+  display: flex;
+  gap: 3px;
+}
+.types *{
+  border-radius: 8px;
 }

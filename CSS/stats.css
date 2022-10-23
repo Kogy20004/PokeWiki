@@ -1,15 +1,15 @@
+
+/* todo los que tiene que ver con la seccion de estadisticas */
 .stats {
   margin: 0 5px;
   width: 108%;
   scale: 0.9;
 }
-
 .progress {
   width: 100%;
   border-radius: 25px;
   background-color: white;
 }
-
 .stats_containesr {
   display: grid;
   gap: 4px;
