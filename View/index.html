@@ -11,7 +11,14 @@ https://www.manualweb.net/html5/formularios-barras-progreso/-->
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>WIKIPOKE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="../Css/style.css" />
+    <link rel="stylesheet" href="../Css/stats.css" />
   </head>
   <body>
     <nav>
@@ -20,18 +27,68 @@ https://www.manualweb.net/html5/formularios-barras-progreso/-->
       </ul>
     </nav>
     <div class="container">
-      <div class="card">
-        <div class="img_card">
-          <img
-            src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
-            alt=""
-          />
-        </div>
+      <div class="card" id="card">
         <div class="info_card">
-          <div class="name_card">
-            <h2>Bulbasaur</h2>
+          <div class="img_card">
+            <img
+              id="img_pokemon"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/1.png"
+              alt=""
+            />
           </div>
-          <progress max="255" value="45"></progress>
+          <div class="details_card">
+            <div class="id_pokedex">
+              <span>#001</span>
+            </div>
+            <div class="name_card">
+              <h2>Bulbasaur</h2>
+            </div>
+            <div class="Basic_data">
+              <p>Altura<span>0.7m</span></p>
+              <p>Peso<span>6.9kg</span></p>
+            </div>
+            <div class="stats">
+              <div class="stats_containesr" id="Ps">
+                <span>Ps</span>
+                <div class="progress">
+                  <div class="value">45</div>
+                </div>
+              </div>
+              <div class="stats_containesr" id="Att">
+                <span>Att</span>
+                <div class="progress">
+                  <div class="value">45</div>
+                </div>
+              </div>
+              <div class="stats_containesr" id="Def">
+                <span>Def</span>
+                <div class="progress">
+                  <div class="value">45</div>
+                </div>
+              </div>
+              <div class="stats_containesr" id="Vel">
+                <span>Vel</span>
+                <div class="progress">
+                  <div class="value">45</div>
+                </div>
+              </div>
+              <div class="stats_containesr" id="Att_S">
+                <span>At.S</span>
+                <div class="progress">
+                  <div class="value">45</div>
+                </div>
+              </div>
+              <div class="stats_containesr" id="Def_S">
+                <span>De.S</span>
+                <div class="progress">
+                  <div class="value">45</div>
+                </div>
+              </div>
+            </div>
+            <div class="types">
+              <div></div>
+            </div>
+          </div>
         </div>
       </div>
       <div class="card">
@@ -53,7 +110,6 @@ https://www.manualweb.net/html5/formularios-barras-progreso/-->
         <div class="info_card"></div>
       </div>
     </div>
-
     <script src="../Js/api_pokemon.js" type="module"></script>
   </body>
 </html>

@@ -1,0 +1,53 @@
+.stats {
+  margin: 0 5px;
+  width: 108%;
+  scale: 0.9;
+}
+
+.progress {
+  width: 100%;
+  border-radius: 25px;
+  background-color: white;
+}
+
+.stats_containesr {
+  display: grid;
+  gap: 4px;
+  grid-template-areas: "a b";
+  grid-template-columns: 15%;
+  margin-bottom: 4px;
+}
+.stats_containesr > span {
+  font-size: 13px;
+  text-align: center;
+}
+.value {
+  color: black;
+  font-weight: bold;
+  font-size: 14px;
+  height: 100%;
+  width: 17.647%;
+  border-radius: 25px 0px 0px 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#Ps .value {
+  background-color: rgba(255, 0, 0, 0.75);
+}
+#Att .value{
+  background-color: rgba(255, 166, 0, 0.75);
+}
+#Def .value{
+  background-color: rgba(255, 255, 0, 0.75);
+}
+#Vel .value {
+  background-color: rgba(122, 122, 255, 0.75);
+}
+#Att_S .value{
+  background-color: rgba(0, 199, 0, 0.75);
+}
+#Def_S .value{
+  background-color: rgba(255, 166, 181, 0.75);
+}
