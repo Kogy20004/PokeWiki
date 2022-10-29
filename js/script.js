@@ -1,12 +1,54 @@
-const pokemons_number = 151
-// hay 905 pokemones en total
+// hay 898 pokemones en total
 const container_card = document.getElementById("container_card");
-
-const fetchPokemons = async () => {
-  for (let i = 1; i <= pokemons_number; i++) {
-    await getpokemon(i)
+const generaciones = {
+  gen_1: [1, 151],
+  gen_2: [152, 251],
+  gen_3: [252, 386],
+  gen_4: [387, 493],
+  gen_5: [494, 649],
+  gen_6: [650, 721],
+  gen_7: [722, 809],
+  gen_8: [810, 898],
+};
+// const generaciones = {
+//   gen_1: {
+//     inicio: 1,
+//     final: 151,
+//   },
+//   gen_2: {
+//     inicio: 152,
+//     final: 251,
+//   },
+//   gen_3: {
+//     inicio: 252,
+//     final: 386,
+//   },
+//   gen_4: {
+//     inicio: 387,
+//     final: 493,
+//   },
+//   gen_5: {
+//     inicio: 494,
+//     final: 649,
+//   },
+//   gen_6: {
+//     inicio: 650,
+//     final: 721,
+//   },
+//   gen_7: {
+//     inicio: 722,
+//     final: 809,
+//   },
+//   gen_8: {
+//     inicio: 810,
+//     final: 898,
+//   },
+// };
+const fetchPokemons = async (Initial, end) => {
+  for (let i = Initial; i <= end; i++) {
+    await getpokemon(i);
   }
-}
+};
 
 function types(cuantos, type, id) {
   const lugar = "pok_" + id;
@@ -21,15 +63,13 @@ function types(cuantos, type, id) {
   }
 }
 
-const getpokemon = async id => {
+const getpokemon = async (id) => {
   const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
   const res = await fetch(url);
-  const pokemon = await res.json()
-  console.log(pokemon)
-  create_pokemon_card(pokemon)
-}
-
-fetchPokemons()
+  const pokemon = await res.json();
+  create_pokemon_card(pokemon);
+};
+fetchPokemons(generaciones.gen_1[0], generaciones.gen_1[1]);
 
 function create_pokemon_card(pokemon) {
   const cuantos = pokemon.types.length;
@@ -58,43 +98,49 @@ function create_pokemon_card(pokemon) {
           <div class="stats_containesr" id="Ps">
             <span>Ps</span>
             <div class="progress">
-              <div class="value" style="width:${(pokemon.stats[0].base_stat / 255) * 100
-    }%;">${pokemon.stats[0].base_stat}</div>
+              <div class="value" style="width:${
+                (pokemon.stats[0].base_stat / 255) * 100
+              }%;">${pokemon.stats[0].base_stat}</div>
             </div>
           </div>
           <div class="stats_containesr" id="Att">
             <span>Att</span>
             <div class="progress">
-              <div class="value" style="width:${(pokemon.stats[1].base_stat / 255) * 100
-    }%;">${pokemon.stats[1].base_stat}</div>
+              <div class="value" style="width:${
+                (pokemon.stats[1].base_stat / 255) * 100
+              }%;">${pokemon.stats[1].base_stat}</div>
             </div>
           </div>
           <div class="stats_containesr" id="Def">
             <span>Def</span>
             <div class="progress">
-              <div class="value" style="width:${(pokemon.stats[2].base_stat / 255) * 100
-    }%;">${pokemon.stats[2].base_stat}</div>
+              <div class="value" style="width:${
+                (pokemon.stats[2].base_stat / 255) * 100
+              }%;">${pokemon.stats[2].base_stat}</div>
             </div>
           </div>
           <div class="stats_containesr" id="Vel">
             <span>Vel</span>
             <div class="progress">
-              <div class="value" style="width:${(pokemon.stats[3].base_stat / 255) * 100
-    }%;">${pokemon.stats[3].base_stat}</div>
+              <div class="value" style="width:${
+                (pokemon.stats[3].base_stat / 255) * 100
+              }%;">${pokemon.stats[3].base_stat}</div>
             </div>
           </div>
           <div class="stats_containesr" id="Att_S">
             <span>At.S</span>
             <div class="progress">
-              <div class="value" style="width:${(pokemon.stats[4].base_stat / 255) * 100
-    }%;">${pokemon.stats[4].base_stat}</div>
+              <div class="value" style="width:${
+                (pokemon.stats[4].base_stat / 255) * 100
+              }%;">${pokemon.stats[4].base_stat}</div>
             </div>
           </div>
           <div class="stats_containesr" id="Def_S">
             <span>De.S</span>
             <div class="progress">
-              <div class="value" style="width:${(pokemon.stats[5].base_stat / 255) * 100
-    }%;">${pokemon.stats[5].base_stat}</div>
+              <div class="value" style="width:${
+                (pokemon.stats[5].base_stat / 255) * 100
+              }%;">${pokemon.stats[5].base_stat}</div>
             </div>
           </div>
         </div>
@@ -107,18 +153,22 @@ function create_pokemon_card(pokemon) {
   types(cuantos, pokemon.types, pokemon.id);
 }
 
-
 const input = document.getElementById("input");
 const button = document.getElementById("button");
-
 
 button.addEventListener("click", (e) => {
   e.preventDefault();
   if (input.value == "") {
-    container_card.innerText = "Pokemon no encontrado"
+    container_card.innerText = "Pokemon no encontrado";
     return;
   }
   container_card.innerText = "";
   getpokemon(input.value);
   console.log(pokemon);
+});
+
+const all_pokemon = document.getElementById("all_pokemon");
+all_pokemon.addEventListener("click", () => {
+  container_card.innerText = "";
+  fetchPokemons(generaciones.gen_1[0], generaciones.gen_8[1]);
 });

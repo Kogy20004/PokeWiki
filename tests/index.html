@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WIKIPOKE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../Css/style.css" />
+    <link rel="stylesheet" href="../Css/stats.css" />
+    <link rel="stylesheet" href="../Css/nav.css" />
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="../Img/Pokémon_logo.png" alt="Pokémon" />
+      </div>
+      <ul class="items_menu">
+        <li>Todos</li>
+        <li>Generaciones</li>
+      </ul>
+      <form class="search">
+        <input type="text" id="input" placeholder="Nombre o ID" />
+        <button id="button">Buscar</button>
+      </form>
+    </nav>
+    <div class="container_card" id="container_card">
+      <div class="card" id="pok_95">
+        <div class="star">
+          <svg
+            class="legedary"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
+            />
+          </svg>
+        </div>
+        <div class="info_card">
+          <div class="img_card">
+            <img
+              id="img_pokemon"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/95.png"
+              alt=""
+            />
+          </div>
+          <div class="details_card">
+            <div class="id_pokedex">
+              <span>#095</span>
+            </div>
+            <div class="name_card">
+              <h2>onix</h2>
+            </div>
+            <div class="Basic_data">
+              <p>Altura<span>8.8m</span></p>
+              <p>Peso<span>210kg</span></p>
+            </div>
+            <div class="stats">
+              <div class="stats_containesr" id="Ps">
+                <span>Ps</span>
+                <div class="progress">
+                  <div class="value" style="width: 13.725490196078432%">35</div>
+                </div>
+              </div>
+              <div class="stats_containesr" id="Att">
+                <span>Att</span>
+                <div class="progress">
+                  <div class="value" style="width: 17.647058823529413%">45</div>
+                </div>
+              </div>
+              <div class="stats_containesr" id="Def">
+                <span>Def</span>
+                <div class="progress">
+                  <div class="value" style="width: 62.745098039215684%">
+                    160
+                  </div>
+                </div>
+              </div>
+              <div class="stats_containesr" id="Vel">
+                <span>Vel</span>
+                <div class="progress">
+                  <div class="value" style="width: 11.76470588235294%">30</div>
+                </div>
+              </div>
+              <div class="stats_containesr" id="Att_S">
+                <span>At.S</span>
+                <div class="progress">
+                  <div class="value" style="width: 17.647058823529413%">45</div>
+                </div>
+              </div>
+              <div class="stats_containesr" id="Def_S">
+                <span>De.S</span>
+                <div class="progress">
+                  <div class="value" style="width: 27.450980392156865%">70</div>
+                </div>
+              </div>
+            </div>
+            <div class="types">
+              <img src="./Img/Tipo_rock.png" alt="" id="type_1" /><img
+                src="./Img/Tipo_grounda.png"
+                alt=""
+                id="type_2"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
