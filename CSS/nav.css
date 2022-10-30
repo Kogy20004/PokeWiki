@@ -12,6 +12,7 @@ nav {
 .logo img {
   width: 75vw;
   max-width: 180px;
+  filter: drop-shadow(0px 0px 6px black);
 }
 
 .items_menu {
@@ -24,15 +25,19 @@ nav {
 .search {
   display: flex;
   align-items: center;
-  gap: 4px;
+  gap: 15px;
 }
+
 .search input {
+  font-size: 1rem;
   background-color: rgb(162, 221, 255);
   border: none;
   outline: 0;
-  padding: 5px 13px;
-  border-radius: 25px;
+  width: 200px;
+  padding: 8.5px 20px;
+  border-radius: 5px;
   color: black;
+  box-shadow: 0px 0px 12px black;
 }
 .search input::placeholder {
   color: black;
@@ -44,10 +49,62 @@ nav {
   background-color: #9e9e9e !important;
   color: white;
 }
-.search button {
-  background-color: #dadada;
-  border: none;
-  outline: 0;
-  padding: 6px;
-  border-radius: 25px;
+
+nav button {
+  box-shadow: 0px 0px 12px black;
+  background: var(--yellow_p);
+  border: 0px hidden;
+  border-radius: 5px;
+  cursor: pointer;
+  color: black;
+  padding: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#menu ul {
+  font-size: 0.9rem;
+  z-index: 2;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+#menu ul li {
+  background-color: #2e518b;
+}
+#menu ul button {
+  display: block;
+  color: black;
+  padding: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+#menu ul li {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+#menu ul li:hover {
+  background: #5b78a7;
+}
+#menu ul ul {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background: #eee;
+  padding: 0;
+}
+#menu ul ul li {
+  float: none;
+  width: 140px;
+  cursor: pointer;
+}
+#menu ul ul li {
+  line-height: 120%;
+  padding: 10px 15px;
+}
+#menu ul li:hover > ul {
+  display: block;
+  text-align: center;
 }

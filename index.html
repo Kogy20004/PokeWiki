@@ -22,13 +22,25 @@ https://www.manualweb.net/html5/formularios-barras-progreso/-->
     <link rel="stylesheet" href="./Css/nav.css" />
   </head>
   <body>
-    <nav>
+    <nav id="menu">
       <div class="logo">
         <img src="./Img/Pokémon_logo.png" alt="Pokémon" />
       </div>
       <ul class="items_menu">
-        <li id="all_pokemon">Todos</li>
-        <li>Generaciones</li>
+        <li id="all_pokemon"><button>Todos</button></li>
+        <li>
+          <button>Generaciones</button>
+          <ul>
+            <li id="gen_1">1° Generacion</li>
+            <li id="gen_2">2° Generacion</li>
+            <li id="gen_3">3° Generacion</li>
+            <li id="gen_4">4° Generacion</li>
+            <li id="gen_5">5° Generacion</li>
+            <li id="gen_6">6° Generacion</li>
+            <li id="gen_7">7° Generacion</li>
+            <li id="gen_8">8° Generacion</li>
+          </ul>
+        </li>
       </ul>
       <form class="search">
         <input type="text" id="input" placeholder="Nombre o ID" />

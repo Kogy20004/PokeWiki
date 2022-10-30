@@ -106,7 +106,7 @@ body {
 }
 .star svg {
   fill: #7e7e7e;
-  filter: drop-shadow(3px 3px rgba(68, 68, 68, 0.75)) ;
+  filter: drop-shadow(3px 3px rgba(68, 68, 68, 0.75));
   /* filter: blur(1px); */
   top: -50px;
   position: relative;
@@ -115,3 +115,4 @@ body {
 .star svg.legedary {
   fill: gold;
 }
+
