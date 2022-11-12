@@ -8,11 +8,12 @@ const generaciones = {
   gen_5: [494, 649],
   gen_6: [650, 721],
   gen_7: [722, 809],
-  gen_8: [810, 898],
+  gen_8: [810, 898]
 };
 const fetchPokemons = async (Initial, end) => {
   for (let i = Initial; i <= end; i++) {
     await getpokemon(i);
+    i
   }
 };
 
@@ -54,7 +55,7 @@ function create_pokemon_card(pokemon) {
   <span>#${pokemon.id.toString().padStart(3, 0)}</span>
   </div>
   <div class="name_card">
-  <h2>${pokemon.name}</h2>
+  <h2>${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
   </div>
   <div class="Basic_data">
   <p>Altura<span>${pokemon.height / 10}m</span></p>
@@ -146,47 +147,37 @@ const gen_5 = document.getElementById("gen_5");
 const gen_6 = document.getElementById("gen_6");
 const gen_7 = document.getElementById("gen_7");
 const gen_8 = document.getElementById("gen_8");
-
-gen_1.addEventListener("click", fetchPokemons(generaciones.gen_1[0], generaciones.gen_1[1]))
-gen_1.addEventListener("click", fetchPokemons(generaciones.gen_1[0], generaciones.gen_1[1]))
-gen_1.addEventListener("click", fetchPokemons(generaciones.gen_1[0], generaciones.gen_1[1]))
-gen_1.addEventListener("click", fetchPokemons(generaciones.gen_1[0], generaciones.gen_1[1]))
-gen_1.addEventListener("click", fetchPokemons(generaciones.gen_1[0], generaciones.gen_1[1]))
-gen_1.addEventListener("click", fetchPokemons(generaciones.gen_1[0], generaciones.gen_1[1]))
-gen_1.addEventListener("click", fetchPokemons(generaciones.gen_1[0], generaciones.gen_1[1]))
-gen_1.addEventListener("click", fetchPokemons(generaciones.gen_1[0], generaciones.gen_1[1]))
-
-// const generaciones = {
-//   gen_1: {
-//     inicio: 1,
-//     final: 151,
-//   },
-//   gen_2: {
-//     inicio: 152,
-//     final: 251,
-//   },
-//   gen_3: {
-//     inicio: 252,
-//     final: 386,
-//   },
-//   gen_4: {
-//     inicio: 387,
-//     final: 493,
-//   },
-//   gen_5: {
-//     inicio: 494,
-//     final: 649,
-//   },
-//   gen_6: {
-//     inicio: 650,
-//     final: 721,
-//   },
-//   gen_7: {
-//     inicio: 722,
-//     final: 809,
-//   },
-//   gen_8: {
-//     inicio: 810,
-//     final: 898,
-//   },
-// };
+{
+  gen_1.onclick = function () {
+    container_card.innerText = "";
+    fetchPokemons(generaciones.gen_1[0], generaciones.gen_1[1]);
+  };
+  gen_2.onclick = function () {
+    container_card.innerText = "";
+    fetchPokemons(generaciones.gen_2[0], generaciones.gen_2[1]);
+  };
+  gen_3.onclick = function () {
+    container_card.innerText = "";
+    fetchPokemons(generaciones.gen_3[0], generaciones.gen_3[1]);
+  };
+  gen_4.onclick = function () {
+    container_card.innerText = "";
+    fetchPokemons(generaciones.gen_4[0], generaciones.gen_4[1]);
+  };
+  gen_5.onclick = function () {
+    container_card.innerText = "";
+    fetchPokemons(generaciones.gen_5[0], generaciones.gen_5[1]);
+  };
+  gen_6.onclick = function () {
+    container_card.innerText = "";
+    fetchPokemons(generaciones.gen_6[0], generaciones.gen_6[1]);
+  };
+  gen_7.onclick = function () {
+    container_card.innerText = "";
+    fetchPokemons(generaciones.gen_7[0], generaciones.gen_7[1]);
+  };
+  gen_8.onclick = function () {
+    container_card.innerText = "";
+    fetchPokemons(generaciones.gen_8[0], generaciones.gen_8[1]);
+  };
+}

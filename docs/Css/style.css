@@ -30,9 +30,11 @@ body {
 }
 
 .card {
+  max-width: 200px;
+  min-width: 185px;
+  width: 15vw;
+  height: 375px;
   background-color: var(--white);
-  width: 12.5vw;
-  height: 425px;
   border-radius: 25px;
   padding: 65px 0;
   z-index: 0;
@@ -40,7 +42,7 @@ body {
 .info_card {
   z-index: -1;
   background-color: var(--blue_P);
-  height: 120%;
+  height: 310px;
   border-radius: 25% 25% 25px 25px;
 }
 /* imagen del pokemon */
@@ -72,6 +74,9 @@ body {
   border-bottom: 4px dotted white;
   height: fit-content;
   text-align: center;
+}
+.name_card h2 {
+  font-size: 1.5vmax ;
 }
 
 /* datos del peso y altura */
@@ -115,4 +120,3 @@ body {
 .star svg.legedary {
   fill: gold;
 }
-

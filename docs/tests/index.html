@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WIKIPOKE</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Comfortaa&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../Css/style.css" />
+    <link rel="stylesheet" href="../Css/stats.css" />
+    <link rel="stylesheet" href="../Css/nav.css" />
+    <style>
+      /* https://freefrontend.com/css-cards/ */
+
+      @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Sacramento&display=swap");
+
+      $cursive: "Great Vibes", cursive;
+      $handwriting: "Sacramento", cursive;
+
+      $white: #fff;
+      $black: #000;
+
+      @mixin hc() {
+        left: 50%;
+        transform: translatex(-50%);
+      }
+
+      @mixin vc() {
+        top: 50%;
+        transform: translatey(-50%);
+      }
+
+      @mixin cc() {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+
+      @mixin scrollbars($size, $foreground-color, $background-color) {
+        ::-webkit-scrollbar-button {
+          display: none;
+        }
+        ::-webkit-scrollbar {
+          width: $size;
+          height: $size;
+        }
+        ::-webkit-scrollbar-thumb {
+          background: $foreground-color;
+          border: 1px solid lighten($foreground-color, 10%);
+          cursor: pointer;
+        }
+        ::-webkit-scrollbar-track {
+          background: $background-color;
+          width: calc(#{$size} * 2);
+          border: 2px solid lighten($background-color, 10%);
+        }
+        ::-webkit-scrollbar-track-piece {
+          background: $background-color;
+          width: calc(#{$size} / 2);
+          border: 2px solid lighten($background-color, 10%);
+        }
+        body {
+          scrollbar-face-color: $foreground-color;
+          scrollbar-track-color: $background-color;
+        }
+      }
+
+      @include scrollbars(2px, rgba(255, 255, 255, 0.15), transparent);
+
+      div {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        font-size: 5vmin;
+      }
+
+      body {
+        display: grid;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        font-family: $handwriting;
+        color: $white;
+        background: #333;
+        background-image: radial-gradient(
+            ellipse at bottom left,
+            rgba(0, 163, 203, 1) 40%,
+            rgba(0, 163, 203, 0) 40%
+          ),
+          radial-gradient(
+            ellipse at top right,
+            rgba(0, 163, 203, 1) 30%,
+            rgba(0, 163, 203, 0) 30%
+          ),
+          linear-gradient(
+            to right,
+            rgba(98, 87, 147, 1) 0%,
+            rgba(98, 87, 147, 1) 33%,
+            rgba(213, 93, 100, 1) 33%,
+            rgba(213, 93, 100, 1) 66%,
+            rgba(228, 145, 41, 1) 66%
+          );
+        background-size: 50% 100%;
+
+        .message {
+          position: absolute;
+          right: 0.5vw;
+          top: 1vw;
+          max-width: 60vw;
+          font-size: 12px;
+          font-family: "Open Sans", sans-serif;
+
+          a {
+            color: inherit;
+            text-decoration: none;
+            border-bottom: 1px solid #444;
+            &:hover {
+              border-width: 3px;
+            }
+          }
+        }
+
+        .card {
+          margin: auto;
+          padding: 2em;
+          border-radius: 1em;
+          border: 1px solid transparentize($white, 0.5);
+          text-shadow: 0 0 1em transparentize($black, 0.5);
+          background: transparentize($white, 0.8);
+          backdrop-filter: blur(20px);
+          transform: perspective(500px);
+          transform-style: preserve-3d;
+
+          .welcome {
+            font-family: $handwriting;
+            transform: translateZ(20px);
+          }
+
+          .year {
+            font-family: $cursive;
+            font-size: 2.5em;
+
+            span {
+              display: block;
+              transform: translateZ(40px);
+              &:nth-child(2) {
+                padding-left: 1em;
+                transform: translateZ(60px);
+              }
+              &:nth-child(3) {
+                padding-left: 2em;
+                transform: translateZ(80px);
+              }
+            }
+          }
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="logo">
+        <img src="../Img/Pokémon_logo.png" alt="Pokémon" />
+      </div>
+      <ul class="items_menu">
+        <li>Todos</li>
+        <li>Generaciones</li>
+      </ul>
+      <form class="search">
+        <input type="text" id="input" placeholder="Nombre o ID" />
+        <button id="button">Buscar</button>
+      </form>
+    </nav>
+    <div class="container_card" id="container_card">
+      <div class="card" id="pok_95">
+        <div class="star">
+          <svg
+            class="legedary"
+            xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 .587l3.668 7.568 8.332 1.151-6.064 5.828 1.48 8.279-7.416-3.967-7.417 3.967 1.481-8.279-6.064-5.828 8.332-1.151z"
+            />
+          </svg>
+        </div>
+        <div class="info_card">
+          <div class="img_card">
+            <img
+              id="img_pokemon"
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/95.png"
+              alt=""
+            />
+          </div>
+          <div class="details_card">
+            <div class="id_pokedex">
+              <span>#095</span>
+            </div>
+            <div class="name_card">
+              <h2>onix</h2>
+            </div>
+            <div class="Basic_data">
+              <p>Altura<span>8.8m</span></p>
+              <p>Peso<span>210kg</span></p>
+            </div>
+            <div class="stats">
+              <div class="stats_containesr" id="Ps">
+                <span>Ps</span>
+                <div class="progress">
+                  <div class="value" style="width: 13.725490196078432%">35</div>
+                </div>
+              </div>
+              <div class="stats_containesr" id="Att">
+                <span>Att</span>
+                <div class="progress">
+                  <div class="value" style="width: 17.647058823529413%">45</div>
+                </div>
+              </div>
+              <div class="stats_containesr" id="Def">
+                <span>Def</span>
+                <div class="progress">
+                  <div class="value" style="width: 62.745098039215684%">
+                    160
+                  </div>
+                </div>
+              </div>
+              <div class="stats_containesr" id="Vel">
+                <span>Vel</span>
+                <div class="progress">
+                  <div class="value" style="width: 11.76470588235294%">30</div>
+                </div>
+              </div>
+              <div class="stats_containesr" id="Att_S">
+                <span>At.S</span>
+                <div class="progress">
+                  <div class="value" style="width: 17.647058823529413%">45</div>
+                </div>
+              </div>
+              <div class="stats_containesr" id="Def_S">
+                <span>De.S</span>
+                <div class="progress">
+                  <div class="value" style="width: 27.450980392156865%">70</div>
+                </div>
+              </div>
+            </div>
+            <div class="types">
+              <img src="" alt="" id="type_1" /><img src="" alt="" id="type_2" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var settings = {
+        url: "https://v3.football.api-sports.io/{endpoint}",
+        method: "GET",
+        timeout: 0,
+        headers: {
+          "x-rapidapi-key": "XxXxXxXxXxXxXxXxXxXxXxXx",
+          "x-rapidapi-host": "v3.football.api-sports.io",
+        },
+      };
+      let $hola;
+      $hola.ajax(settings).done(function (response) {
+        console.log(response);
+      });
+    </script>
+  </body>
+</html>

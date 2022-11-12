@@ -70,6 +70,7 @@ nav button {
 }
 #menu ul li {
   background-color: #2e518b;
+  font-size: 95%;
 }
 #menu ul button {
   display: block;
