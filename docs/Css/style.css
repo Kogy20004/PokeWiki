@@ -13,7 +13,7 @@
   --blue_P: #2c7bbf;
   --blue_S: #1d3973;
   --black: #0d0d0d;
-  --white: rgba(255, 255, 255);
+  --white: #ffffff;
 }
 body {
   font-family: "Comfortaa", cursive;

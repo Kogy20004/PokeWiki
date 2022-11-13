@@ -15,13 +15,6 @@ nav {
   filter: drop-shadow(0px 0px 6px black);
 }
 
-.items_menu {
-  display: flex;
-  align-items: center;
-  gap: 50px;
-  list-style-type: none;
-}
-
 .search {
   display: flex;
   align-items: center;
@@ -48,64 +41,4 @@ nav {
 .search input:hover {
   background-color: #9e9e9e !important;
   color: white;
-}
-
-nav button {
-  box-shadow: 0px 0px 12px black;
-  background: var(--yellow_p);
-  border: 0px hidden;
-  border-radius: 5px;
-  cursor: pointer;
-  color: black;
-  padding: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-#menu ul {
-  font-size: 0.9rem;
-  z-index: 2;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-#menu ul li {
-  background-color: #2e518b;
-  font-size: 95%;
-}
-#menu ul button {
-  display: block;
-  color: black;
-  padding: 10px;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-}
-#menu ul li {
-  position: relative;
-  float: left;
-  margin: 0;
-  padding: 0;
-}
-#menu ul li:hover {
-  background: #5b78a7;
-}
-#menu ul ul {
-  display: none;
-  position: absolute;
-  top: 100%;
-  left: 0;
-  background: #eee;
-  padding: 0;
-}
-#menu ul ul li {
-  float: none;
-  width: 140px;
-  cursor: pointer;
-}
-#menu ul ul li {
-  line-height: 120%;
-  padding: 10px 15px;
-}
-#menu ul li:hover > ul {
-  display: block;
-  text-align: center;
 }

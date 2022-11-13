@@ -1,0 +1,67 @@
+button {
+  width: 120px;
+  padding: 10px;
+  border: 0px none;
+}
+button:not(.list) {
+  background: var(--yellow_p);
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px black;
+}
+.button:hover:not(.list) {
+  background: rgb(201, 172, 8);
+}
+button:disabled:not(.list) {
+  background: var(--yellow_S);
+}
+.list {
+  background-color: var(--blue_P);
+  color: white;
+  font-weight: bold;
+}
+.list:hover {
+  background: rgb(25, 69, 107);
+}
+.list:disabled {
+  background: var(--blue_S);
+  color: rgb(94, 94, 94);
+}
+
+#all_pokemon,
+.search button {
+  cursor: pointer;
+}
+
+.items_menu {
+  display: flex;
+  align-items: center;
+}
+
+.items_menu ul {
+  z-index: 2;
+  display: flex;
+  list-style: none;
+  gap: 50px;
+}
+
+.items_menu ul li {
+  position: relative;
+  float: left;
+  margin: 0;
+  padding: 0;
+}
+
+.items_menu li:hover > ul {
+  display: block;
+  text-align: center;
+}
+
+.items_menu ul ul {
+  display: none;
+  position: absolute;
+}
+.items_menu ul ul button {
+  float: none;
+  width: 120px;
+  cursor: pointer;
+}

@@ -1,5 +1,6 @@
 // hay 898 pokemones en total
 const container_card = document.getElementById("container_card");
+const all_buttons = document.querySelectorAll(".button");
 const generaciones = {
   gen_1: [1, 151],
   gen_2: [152, 251],
@@ -11,30 +12,38 @@ const generaciones = {
   gen_8: [810, 898]
 };
 const fetchPokemons = async (Initial, end) => {
+  for (let i = 0; i < all_buttons.length; i++) {
+    all_buttons[i].disabled = true;
+  }
   for (let i = Initial; i <= end; i++) {
     await getpokemon(i);
-    i
+  }
+  for (let i = 0; i < all_buttons.length; i++) {
+    all_buttons[i].disabled = false;
   }
 };
 
 function types(cuantos, type, id) {
   const lugar = "pok_" + id;
   const imgs = document.querySelector(`#${lugar} .types`);
-  const imgs_type_1 = `<img src="./Img/Tipo_${type[0].type.name}.png" alt="" id="type_1" />`;
+  const imgs_type_1 = `<img src="./Img/Tipo_${type[0].type
+    .name}.png" alt="" id="type_1" />`;
   if (cuantos == 1) {
     imgs.insertAdjacentHTML("beforeend", imgs_type_1);
   } else {
-    const imgs_type_2 = `<img src="./Img/Tipo_${type[1].type.name}a.png" alt="" id="type_2" />`;
+    const imgs_type_2 = `<img src="./Img/Tipo_${type[1].type
+      .name}a.png" alt="" id="type_2" />`;
     imgs.insertAdjacentHTML("beforeend", imgs_type_1);
     imgs.insertAdjacentHTML("beforeend", imgs_type_2);
   }
 }
 
-const getpokemon = async (id) => {
+const getpokemon = async id => {
   const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
   const res = await fetch(url);
   const pokemon = await res.json();
   create_pokemon_card(pokemon);
+  console.log(pokemon);
 };
 fetchPokemons(generaciones.gen_1[0], generaciones.gen_1[1]);
 
@@ -65,49 +74,49 @@ function create_pokemon_card(pokemon) {
   <div class="stats_containesr" id="Ps">
   <span>Ps</span>
   <div class="progress">
-  <div class="value" style="width:${
-    (pokemon.stats[0].base_stat / 255) * 100
-  }%;">${pokemon.stats[0].base_stat}</div>
+  <div class="value" style="width:${pokemon.stats[0].base_stat /
+    255 *
+    100}%;">${pokemon.stats[0].base_stat}</div>
             </div>
             </div>
           <div class="stats_containesr" id="Att">
             <span>Att</span>
             <div class="progress">
-              <div class="value" style="width:${
-                (pokemon.stats[1].base_stat / 255) * 100
-              }%;">${pokemon.stats[1].base_stat}</div>
+              <div class="value" style="width:${pokemon.stats[1].base_stat /
+                255 *
+                100}%;">${pokemon.stats[1].base_stat}</div>
               </div>
           </div>
           <div class="stats_containesr" id="Def">
             <span>Def</span>
             <div class="progress">
-              <div class="value" style="width:${
-                (pokemon.stats[2].base_stat / 255) * 100
-              }%;">${pokemon.stats[2].base_stat}</div>
+              <div class="value" style="width:${pokemon.stats[2].base_stat /
+                255 *
+                100}%;">${pokemon.stats[2].base_stat}</div>
             </div>
           </div>
           <div class="stats_containesr" id="Vel">
             <span>Vel</span>
             <div class="progress">
-              <div class="value" style="width:${
-                (pokemon.stats[3].base_stat / 255) * 100
-              }%;">${pokemon.stats[3].base_stat}</div>
+              <div class="value" style="width:${pokemon.stats[3].base_stat /
+                255 *
+                100}%;">${pokemon.stats[3].base_stat}</div>
               </div>
               </div>
               <div class="stats_containesr" id="Att_S">
               <span>At.S</span>
               <div class="progress">
-              <div class="value" style="width:${
-                (pokemon.stats[4].base_stat / 255) * 100
-              }%;">${pokemon.stats[4].base_stat}</div>
+              <div class="value" style="width:${pokemon.stats[4].base_stat /
+                255 *
+                100}%;">${pokemon.stats[4].base_stat}</div>
             </div>
             </div>
           <div class="stats_containesr" id="Def_S">
           <span>De.S</span>
             <div class="progress">
-              <div class="value" style="width:${
-                (pokemon.stats[5].base_stat / 255) * 100
-              }%;">${pokemon.stats[5].base_stat}</div>
+              <div class="value" style="width:${pokemon.stats[5].base_stat /
+                255 *
+                100}%;">${pokemon.stats[5].base_stat}</div>
               </div>
               </div>
               </div>
@@ -123,7 +132,7 @@ function create_pokemon_card(pokemon) {
 const input = document.getElementById("input");
 const button = document.getElementById("button");
 
-button.addEventListener("click", (e) => {
+button.addEventListener("click", e => {
   e.preventDefault();
   if (input.value == "") {
     container_card.innerText = "Pokemon no encontrado";
@@ -137,6 +146,7 @@ button.addEventListener("click", (e) => {
 const all_pokemon = document.getElementById("all_pokemon");
 all_pokemon.addEventListener("click", () => {
   container_card.innerText = "";
+
   fetchPokemons(generaciones.gen_1[0], generaciones.gen_8[1]);
 });
 const gen_1 = document.getElementById("gen_1");
@@ -148,36 +158,36 @@ const gen_6 = document.getElementById("gen_6");
 const gen_7 = document.getElementById("gen_7");
 const gen_8 = document.getElementById("gen_8");
 {
-  gen_1.onclick = function () {
+  gen_1.onclick = function() {
     container_card.innerText = "";
-    fetchPokemons(generaciones.gen_1[0], generaciones.gen_1[1]);
+    fetchPokemons(generaciones.gen_1[0], generaciones.gen_1[1], gen_1);
   };
-  gen_2.onclick = function () {
+  gen_2.onclick = function() {
     container_card.innerText = "";
-    fetchPokemons(generaciones.gen_2[0], generaciones.gen_2[1]);
+    fetchPokemons(generaciones.gen_2[0], generaciones.gen_2[1], gen_2);
   };
-  gen_3.onclick = function () {
+  gen_3.onclick = function() {
     container_card.innerText = "";
-    fetchPokemons(generaciones.gen_3[0], generaciones.gen_3[1]);
+    fetchPokemons(generaciones.gen_3[0], generaciones.gen_3[1], gen_3);
   };
-  gen_4.onclick = function () {
+  gen_4.onclick = function() {
     container_card.innerText = "";
-    fetchPokemons(generaciones.gen_4[0], generaciones.gen_4[1]);
+    fetchPokemons(generaciones.gen_4[0], generaciones.gen_4[1], gen_4);
   };
-  gen_5.onclick = function () {
+  gen_5.onclick = function() {
     container_card.innerText = "";
-    fetchPokemons(generaciones.gen_5[0], generaciones.gen_5[1]);
+    fetchPokemons(generaciones.gen_5[0], generaciones.gen_5[1], gen_5);
   };
-  gen_6.onclick = function () {
+  gen_6.onclick = function() {
     container_card.innerText = "";
-    fetchPokemons(generaciones.gen_6[0], generaciones.gen_6[1]);
+    fetchPokemons(generaciones.gen_6[0], generaciones.gen_6[1], gen_6);
   };
-  gen_7.onclick = function () {
+  gen_7.onclick = function() {
     container_card.innerText = "";
-    fetchPokemons(generaciones.gen_7[0], generaciones.gen_7[1]);
+    fetchPokemons(generaciones.gen_7[0], generaciones.gen_7[1], gen_7);
   };
-  gen_8.onclick = function () {
+  gen_8.onclick = function() {
     container_card.innerText = "";
-    fetchPokemons(generaciones.gen_8[0], generaciones.gen_8[1]);
+    fetchPokemons(generaciones.gen_8[0], generaciones.gen_8[1], gen_8);
   };
 }
