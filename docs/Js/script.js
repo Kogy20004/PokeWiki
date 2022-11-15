@@ -49,71 +49,72 @@ function create_pokemon_card(pokemon) {
   const cuantos = pokemon.types.length;
   const card = `
   <div class="card" id="pok_${pokemon.id}">
-  <div class="info_card">
-  <div class="img_card">
-  <img
-  class="img_normal"
-  id="img_pokemon"
-  src="${pokemon.sprites.front_default}"
-  alt=""
-/>
-<img
-  class="img_shiny"
-  id="img_pokemon"
-  src="${pokemon.sprites.front_shiny}"
-  alt=""
-/>
-  </div>
-  <div class="details_card">
-  <div class="id_pokedex">
-  <span>#${pokemon.id.toString().padStart(3, 0)}</span>
-  </div>
-  <div class="name_card">
-  <h2>${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}</h2>
-  </div>
-  <div class="Basic_data">
-  <p>Altura<span>${pokemon.height / 10}m</span></p>
-  <p>Peso<span>${pokemon.weight / 10}kg</span></p>
-  </div>
-  <div class="stats">
-  <div class="stats_containesr" id="Ps">
-  <span>Ps</span>
-  <div class="progress">
-  <div class="value" style="width:${
-    (pokemon.stats[0].base_stat / 255) * 100
-  }%;">${pokemon.stats[0].base_stat}</div>
+    <div class="info_card">
+      <div class="img_card">
+        <img
+          class="img_normal"
+          id="img_pokemon"
+          src="${pokemon.sprites.front_default}"
+          alt=""/>
+        <img
+          class="img_shiny"
+          id="img_pokemon"
+          src="${pokemon.sprites.front_shiny}"
+          alt=""/>
+      </div>
+      <div class="details_card">
+        <div class="id_pokedex">
+          <span>#${pokemon.id.toString().padStart(3, 0)}</span>
+        </div>
+        <div class="name_card">
+          <h2>
+            ${pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1)}
+          </h2>
+        </div>
+        <div class="Basic_data">
+          <p>Altura<span>${pokemon.height / 10}m</span></p>
+          <p>Peso<span>${pokemon.weight / 10}kg</span></p>
+        </div>
+        <div class="stats">
+          <div class="stats_containesr" id="Ps">
+            <span>Ps</span>
+            <div class="progress">
+              <div class="value" style="width:
+              ${(pokemon.stats[0].base_stat / 255) * 100}
+              %;">${pokemon.stats[0].base_stat}
             </div>
-            </div>
+          </div>
+        </div>
           <div class="stats_containesr" id="Att">
             <span>Att</span>
             <div class="progress">
               <div class="value" style="width:${
-                (pokemon.stats[1].base_stat / 255) * 100
-              }%;">${pokemon.stats[1].base_stat}</div>
+                (pokemon.stats[1].base_stat / 255) * 100}
+                %;">${pokemon.stats[1].base_stat}</div>
               </div>
           </div>
           <div class="stats_containesr" id="Def">
             <span>Def</span>
             <div class="progress">
               <div class="value" style="width:${
-                (pokemon.stats[2].base_stat / 255) * 100
-              }%;">${pokemon.stats[2].base_stat}</div>
+                (pokemon.stats[2].base_stat / 255) * 100}
+                %;">${pokemon.stats[2].base_stat}</div>
             </div>
           </div>
           <div class="stats_containesr" id="Vel">
             <span>Vel</span>
             <div class="progress">
               <div class="value" style="width:${
-                (pokemon.stats[3].base_stat / 255) * 100
-              }%;">${pokemon.stats[3].base_stat}</div>
+                (pokemon.stats[3].base_stat / 255) * 100}
+                %;">${pokemon.stats[3].base_stat}</div>
               </div>
               </div>
               <div class="stats_containesr" id="Att_S">
               <span>At.S</span>
               <div class="progress">
               <div class="value" style="width:${
-                (pokemon.stats[4].base_stat / 255) * 100
-              }%;">${pokemon.stats[4].base_stat}</div>
+                (pokemon.stats[4].base_stat / 255) * 100}
+                %;">${pokemon.stats[4].base_stat}</div>
             </div>
             </div>
           <div class="stats_containesr" id="Def_S">
