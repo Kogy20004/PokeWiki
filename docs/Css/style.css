@@ -22,18 +22,21 @@ body {
 }
 
 .container_card {
+  padding: 10px 0;
+  gap: 15px;
+  margin: 0 10px;
+  min-height: 65vh;
   display: flex;
-  gap: 10px;
-  padding: 7.5px 15px;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
 }
 
 .card {
   max-width: 200px;
   min-width: 185px;
   width: 15vw;
-  height: 375px;
+  height: 400px;
   background-color: var(--white);
   border-radius: 25px;
   padding: 65px 0;
@@ -42,7 +45,7 @@ body {
 .info_card {
   z-index: -1;
   background-color: var(--blue_P);
-  height: 310px;
+  height: 335px;
   border-radius: 25% 25% 25px 25px;
 }
 /* imagen del pokemon */
@@ -59,6 +62,22 @@ body {
   border-radius: 45%;
   width: 60%;
 }
+.img_card .img_shiny {
+  display: block;
+  position: absolute;
+  z-index: 1;
+  cursor: cell;
+}
+.img_card .img_normal {
+  z-index: 2;
+}
+.img_card .img_shiny:hover {
+  z-index: 3;
+}
+.img_card .img_normal:hover + .img_shiny {
+  z-index: 3;
+}
+
 /* todos los datos  */
 .details_card {
   position: relative;
@@ -76,7 +95,7 @@ body {
   text-align: center;
 }
 .name_card h2 {
-  font-size: 1.5vmax ;
+  font-size: 1.5vmax;
 }
 
 /* datos del peso y altura */
@@ -106,17 +125,17 @@ body {
 
 /* estrella */
 
-.star {
+/* .star {
   position: fixed;
 }
 .star svg {
   fill: #7e7e7e;
   filter: drop-shadow(3px 3px rgba(68, 68, 68, 0.75));
-  /* filter: blur(1px); */
+  filter: blur(1px); 
   top: -50px;
   position: relative;
   left: 150px;
 }
 .star svg.legedary {
   fill: gold;
-}
+} */

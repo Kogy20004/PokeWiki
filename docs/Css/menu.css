@@ -33,8 +33,8 @@ button:disabled:not(.list) {
 }
 
 .items_menu {
-  display: flex;
-  align-items: center;
+  /* display: flex; */
+  /* align-items: center; */
 }
 
 .items_menu ul {

@@ -1,0 +1,22 @@
+/* footer */
+footer {
+  background: var(--blue_P);
+  margin: 10px 10px 0 10px;
+  border-radius: 25px 25px 0 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.footer_logo img {
+  width: 150px;
+  filter: drop-shadow(0 0 10px var(--blue_S));
+  border-radius: 50%;
+}
+
+/* social_networks*/
+.social_networks svg {
+  fill: var(--yellow_p);
+  background: var(--blue_S);
+  border-radius: 50px;
+}
