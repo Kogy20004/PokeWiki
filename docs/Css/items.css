@@ -2,13 +2,13 @@
 .Basic_data {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   align-items: center;
 }
 .Basic_data p {
   text-align: -webkit-center;
-  width: 80%;
-  margin: 5px 0;
+  width: 90%;
+  margin: 2px 0;
 }
 
 .data {

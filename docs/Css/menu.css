@@ -28,13 +28,10 @@ button:disabled:not(.list) {
 }
 
 #all_pokemon,
+.items,
+a.items,
 .search button {
   cursor: pointer;
-}
-
-.items_menu {
-  /* display: flex; */
-  /* align-items: center; */
 }
 
 .items_menu ul {
@@ -54,9 +51,12 @@ button:disabled:not(.list) {
 .items_menu li:hover > ul {
   display: block;
   text-align: center;
+  padding-inline-start: 0;
 }
 
 .items_menu ul ul {
+  padding-inline-start: 0;
+
   display: none;
   position: absolute;
 }
