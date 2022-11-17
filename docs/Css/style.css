@@ -1,5 +1,4 @@
 * {
-  padding: 0;
   margin: 0;
   box-sizing: border-box;
   margin-block-start: 0;
@@ -50,6 +49,7 @@ body {
 }
 /* imagen del pokemon */
 .img_card {
+  min-height: 115px;
   position: relative;
   top: -60px;
   display: flex;
@@ -85,7 +85,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 3px;
+  gap: 4px;
 }
 /* nombre del pokemon  */
 .name_card {
