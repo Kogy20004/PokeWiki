@@ -2,6 +2,7 @@ const all_pokemon = document.getElementById("all_pokemon");
 const container_card = document.getElementById("container_card");
 
 const fetch_item = async () => {
+  container_button_category.innerHTML = ""
   await create_nav_buttonsa();
   const all_buttons = document.querySelectorAll(".button");
   console.log(all_buttons);
