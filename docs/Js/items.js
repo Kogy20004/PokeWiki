@@ -1,8 +1,8 @@
 const all_pokemon = document.getElementById("all_pokemon");
 const container_card = document.getElementById("container_card");
 
-const fetch_item = async () => {
-  container_button_category.innerHTML = ""
+const fetch_item = async (fin) => {
+  container_button_category.innerHTML = "";
   await create_nav_buttonsa();
   const all_buttons = document.querySelectorAll(".button");
   console.log(all_buttons);
@@ -10,7 +10,7 @@ const fetch_item = async () => {
     all_buttons[i].disabled = true;
   }
 
-  for (let i = 1; i <= 151; i++) {
+  for (let i = 1; i <= fin; i++) {
     await getitem(i);
   }
 
@@ -25,14 +25,11 @@ const getitem = async (id) => {
   const res = await fetch(url);
   if (res.ok) {
     const item = await res.json();
-    console.log("ok");
-
     create_item_card(item);
   }
 };
 
-function create_item_card(item) {
-  console.log(item);
+function create_item_card(item, parametro) {
   if (item.sprites.default == null) {
     return;
   }
@@ -93,7 +90,6 @@ function description(array) {
 function name_card(array) {
   for (let i = 0; i < array.length; i++) {
     const element = array[i].language.name;
-    console.log(element);
     if (element == "es") {
       return array[i].name;
     }
@@ -108,7 +104,7 @@ function name_card(array) {
 
 all_pokemon.addEventListener("click", () => {
   container_card.innerText = "";
-  fetch_item();
+  fetch_item(1000);
 });
 
 // nav
@@ -140,7 +136,7 @@ function buttonHtml(item_pocket) {
     .getElementById(`item-pocket_${item_pocket.id}`)
     .addEventListener("click", async () => {
       const all_buttons = await document.querySelectorAll(".button");
-      console.log(all_buttons); 
+      console.log(all_buttons);
       container_card.innerText = "";
       for (let i = 0; i < all_buttons.length; i++) {
         all_buttons[i].disabled = true;
@@ -171,4 +167,50 @@ const categories_items = async (url) => {
   }
 };
 
-fetch_item();
+fetch_item(151);
+
+// search
+
+const input = document.getElementById("input");
+const button = document.getElementById("button");
+const datalist_items = document.getElementById("datalist_items");
+
+button.addEventListener("click", (e) => {
+  e.preventDefault();
+  if (input.value == "") {
+    container_card.innerText = "Item no encontrado";
+    return;
+  }
+  container_card.innerText = "";
+  searchitem(input.value);
+});
+
+const searchitem = async (id) => {
+  const url = `https://pokeapi.co/api/v2/item/${id}/`;
+  const res = await fetch(url);
+  if (res.ok) {
+    const item = await res.json();
+    console.log("item");
+    create_item_card(item, 1);
+  }
+};
+
+function datalist_items_f(item) {
+  const opcion = `<option value="${item.name}"> ${name_card(
+    item.names
+  )}</option>`;
+  const crear_opcion = datalist_items.insertAdjacentHTML("beforeend", opcion);
+  crear_opcion;
+}
+
+const create_datalist = async () => {
+  for (let i = 1; i < 300; i++) {
+    const url = `https://pokeapi.co/api/v2/item/${i}/`;
+    const res = await fetch(url);
+    if (res.ok) {
+      const item = await res.json();
+      datalist_items_f(item);
+    }
+  }
+};
+create_datalist();

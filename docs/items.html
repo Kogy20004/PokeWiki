@@ -45,7 +45,14 @@ https://pokeapi.co
         </ul>
       </div>
       <form class="search">
-        <input type="text" id="input" placeholder="Nombre o ID" />
+        <input
+          type="text"
+          id="input"
+          placeholder="ID o Nombre"
+          list="datalist_items"
+          autocomplete="off"
+        />
+        <datalist id="datalist_items"> </datalist>
         <button id="button" class="button">Buscar</button>
       </form>
     </nav>
@@ -117,6 +124,5 @@ https://pokeapi.co
       </div>
     </footer>
     <script src="./Js/items.js" type="module"></script>
-    <!-- <script src="./Js/items copy.js" type="module"></script> -->
   </body>
 </html>
